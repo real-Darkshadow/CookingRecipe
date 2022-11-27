@@ -95,7 +95,7 @@
             android:layout_marginTop="20dp"
             android:text="Popular category" />
 
-        <ScrollView
+        <HorizontalScrollView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scrollbars="none"
@@ -117,6 +117,8 @@
                         android:layout_width="83dp"
                         android:onClick="categorybutton"
                         android:layout_height="34dp"
+                        android:text="Salad"
+                        android:textColor="@color/buttont"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/buttonbg"/>
@@ -124,6 +126,29 @@
                         android:layout_width="83dp"
                         android:onClick="categorybutton"
                         android:layout_height="34dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Breakfast"
+                        android:textSize="8dp"
+                        android:textColor="@color/buttont"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/buttonbg"/>
+
+                    <Button
+                        android:layout_width="83dp"
+                        android:onClick="categorybutton"
+                        android:layout_height="34dp"
+                        android:text="Appetizer"
+                        android:textColor="@color/buttont"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/buttonbg"/>
+
+                    <Button
+                        android:layout_width="83dp"
+                        android:onClick="categorybutton"
+                        android:layout_height="34dp"
+                        android:text="Noodle"
+                        android:textColor="@color/buttont"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/buttonbg"/>
@@ -133,6 +158,8 @@
                         android:onClick="categorybutton"
                         android:layout_height="34dp"
                         android:layout_marginEnd="8dp"
+                        android:text="Salad"
+                        android:textColor="@color/buttont"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/buttonbg"/>
 
@@ -142,22 +169,8 @@
                         android:layout_height="34dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
-                        android:background="@drawable/buttonbg"/>
-
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/buttonbg"/>
-
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
+                        android:text="Salad"
+                        android:textColor="@color/buttont"
                         android:background="@drawable/buttonbg"
                         android:backgroundTintMode="add"/>
 
@@ -166,7 +179,7 @@
 
                 </TableRow>
             </TableLayout>
-        </ScrollView>
+        </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popularrecycler"

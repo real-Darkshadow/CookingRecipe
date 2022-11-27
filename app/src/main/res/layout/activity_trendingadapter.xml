@@ -6,8 +6,9 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        app:cardCornerRadius="0dp"
+        android:layout_height="match_parent"
         android:layout_marginEnd="16dp">
 
         <LinearLayout
@@ -18,14 +19,16 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="280dp"
                 android:layout_height="180dp"
-                app:cardCornerRadius="29dp">
-            <ImageView
-                android:id="@+id/tfoodimg"
-                android:layout_width="280dp"
-                android:layout_height="180dp"
-                android:background="@drawable/searchbackground"
-                android:clipToOutline="true"
-                android:src="@drawable/image" /></androidx.cardview.widget.CardView>
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/tfoodimg"
+                    android:layout_width="280dp"
+                    android:layout_height="180dp"
+                    android:background="@drawable/searchbackground"
+                    android:clipToOutline="true"
+                    android:src="@drawable/image" />
+            </androidx.cardview.widget.CardView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
