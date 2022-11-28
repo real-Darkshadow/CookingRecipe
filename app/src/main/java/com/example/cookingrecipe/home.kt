@@ -1,6 +1,10 @@
 package com.example.cookingrecipe
 
+import android.content.Intent
+import android.content.Intent.ACTION_DIAL
+import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Phone
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +44,7 @@ class home : Fragment() {
         binding.recentrecycler.adapter=recentAdapter(requireContext())
         binding.trendingrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         binding.trendingrecycler.adapter=trendingadapter(requireContext())
+
 
     }
     fun categorybutton(){
