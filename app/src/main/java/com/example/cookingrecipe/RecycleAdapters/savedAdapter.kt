@@ -1,10 +1,11 @@
-package com.example.cookingrecipe
+package com.example.cookingrecipe.RecycleAdapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cookingrecipe.R
 
 class savedAdapter(context: Context): RecyclerView.Adapter<savedAdapter.viewholder>() {
     class viewholder(view: View):RecyclerView.ViewHolder(view){

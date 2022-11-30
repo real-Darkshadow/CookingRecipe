@@ -1,16 +1,13 @@
-package com.example.cookingrecipe
+package com.example.cookingrecipe.RecycleAdapters
 
 import android.content.Context
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextClock
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cookingrecipe.R
 
 class trendingadapter(val context: Context): RecyclerView.Adapter<trendingadapter.viewholder>() {
 

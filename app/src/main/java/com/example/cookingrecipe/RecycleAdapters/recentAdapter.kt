@@ -1,10 +1,11 @@
-package com.example.cookingrecipe
+package com.example.cookingrecipe.RecycleAdapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cookingrecipe.R
 
 class recentAdapter(context: Context) : RecyclerView.Adapter<recentAdapter.VH>() {
     class VH(ciew: View) : RecyclerView.ViewHolder(ciew) {

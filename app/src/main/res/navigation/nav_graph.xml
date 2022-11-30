@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_home2_to_saved"
             app:destination="@id/saved" />
+        <action
+            android:id="@+id/action_home2_to_notifications"
+            app:destination="@id/notifications" />
     </fragment>
     <fragment
         android:id="@+id/saved"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_saved" >
         <action
             android:id="@+id/action_saved_to_home22"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifications"
+        android:name="com.example.cookingrecipe.notifications"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_notifications_to_home22"
             app:destination="@id/home2" />
     </fragment>
 </navigation>

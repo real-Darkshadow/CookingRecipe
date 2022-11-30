@@ -1,15 +1,14 @@
 package com.example.cookingrecipe
 
-import android.content.Intent
-import android.content.Intent.ACTION_DIAL
-import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Phone
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cookingrecipe.RecycleAdapters.popularAdapter
+import com.example.cookingrecipe.RecycleAdapters.recentAdapter
+import com.example.cookingrecipe.RecycleAdapters.trendingadapter
 import com.example.cookingrecipe.databinding.FragmentHomeBinding
 
 
@@ -39,11 +38,11 @@ class home : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.popularrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.popularrecycler.adapter=popularAdapter(requireContext())
+        binding.popularrecycler.adapter= popularAdapter(requireContext())
         binding.recentrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.recentrecycler.adapter=recentAdapter(requireContext())
+        binding.recentrecycler.adapter= recentAdapter(requireContext())
         binding.trendingrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.trendingrecycler.adapter=trendingadapter(requireContext())
+        binding.trendingrecycler.adapter= trendingadapter(requireContext())
 
 
     }

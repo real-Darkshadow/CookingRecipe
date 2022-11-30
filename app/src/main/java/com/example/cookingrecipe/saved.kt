@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cookingrecipe.databinding.FragmentHomeBinding
+import com.example.cookingrecipe.RecycleAdapters.savedAdapter
 import com.example.cookingrecipe.databinding.FragmentSavedBinding
-import java.lang.reflect.Array.get
 
 class saved : Fragment() {
     private var _binding:FragmentSavedBinding?=null
@@ -29,7 +28,7 @@ class saved : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.savedrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        binding.savedrecycler.adapter=savedAdapter(requireContext())
+        binding.savedrecycler.adapter= savedAdapter(requireContext())
     }
 
     override fun onDestroy() {
