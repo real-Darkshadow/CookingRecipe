@@ -1,5 +1,6 @@
 package com.example.cookingrecipe.RecycleAdapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -23,9 +24,11 @@ class popularAdapter(context: Context,val rec:recipes): RecyclerView.Adapter<pop
         return Viewholder(lay)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
         holder.text.text=rec.recipes[position+10].title
         Picasso.get().load(rec.recipes[position+10].image).into(holder.image)
+        holder.time.text="${rec.recipes[position].readyInMinutes} mins"
     }
 
     override fun getItemCount(): Int {

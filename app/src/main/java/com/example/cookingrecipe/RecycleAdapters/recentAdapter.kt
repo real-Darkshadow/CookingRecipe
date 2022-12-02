@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingrecipe.R
+import com.example.cookingrecipe.apidata.recipes
 
-class recentAdapter(context: Context) : RecyclerView.Adapter<recentAdapter.VH>() {
+class recentAdapter(context: Context, reci: recipes) : RecyclerView.Adapter<recentAdapter.VH>() {
     class VH(ciew: View) : RecyclerView.ViewHolder(ciew) {
 
     }

@@ -1,6 +1,7 @@
 package com.example.cookingrecipe.RecycleAdapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,10 +23,12 @@ class trendingadapter(val context: Context,val rec:recipes): RecyclerView.Adapte
         val lay=LayoutInflater.from(parent.context).inflate(R.layout.activity_trendingadapter,parent,false)
         return viewholder(lay)
     }
-
     override fun onBindViewHolder(holder: viewholder, position: Int) {
         holder.text.text=rec.recipes[position].title
-        Picasso.get().load(rec.recipes[position].image).into(holder.image)
+        Picasso.get().load(rec.recipes[position].image).noFade().into(holder.image)
+        holder.image.setOnClickListener{
+            val intent=Intent()
+        }
     }
 
     override fun getItemCount(): Int {
