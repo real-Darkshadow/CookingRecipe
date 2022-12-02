@@ -1,4 +1,4 @@
-package com.example.cookingrecipe
+package com.example.cookingrecipe.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

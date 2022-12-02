@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="280dp"
+        android:layout_width="250dp"
         app:cardCornerRadius="0dp"
         android:layout_height="match_parent"
         android:layout_marginEnd="16dp">
@@ -17,17 +17,16 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="280dp"
-                android:layout_height="180dp"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
                 app:cardCornerRadius="10dp">
 
                 <ImageView
                     android:id="@+id/tfoodimg"
-                    android:layout_width="280dp"
-                    android:layout_height="180dp"
-                    android:background="@drawable/searchbackground"
-                    android:clipToOutline="true"
-                    android:src="@drawable/image" />
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/searchbackground"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,10 +37,10 @@
 
                 <TextView
                     android:id="@+id/tfoodname"
-                    android:layout_width="wrap_content"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="How to sharwama at home"
+                    android:text="How to sharwamdfdsdsfsdfa at home"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"

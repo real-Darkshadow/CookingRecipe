@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_marginTop="20dp"
     android:layout_height="match_parent"
-    tools:context=".notifications">
+    tools:context=".fragments.notifications">
 
     <TextView
         android:layout_width="wrap_content"

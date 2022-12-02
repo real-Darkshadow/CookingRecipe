@@ -8,8 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingrecipe.R
+import com.example.cookingrecipe.apidata.recipes
+import com.squareup.picasso.Picasso
 
-class trendingadapter(val context: Context): RecyclerView.Adapter<trendingadapter.viewholder>() {
+class trendingadapter(val context: Context,val rec:recipes): RecyclerView.Adapter<trendingadapter.viewholder>() {
 
     class viewholder(view: View):RecyclerView.ViewHolder(view){
         val image=view.findViewById<ImageView>(R.id.tfoodimg)
@@ -22,9 +24,11 @@ class trendingadapter(val context: Context): RecyclerView.Adapter<trendingadapte
     }
 
     override fun onBindViewHolder(holder: viewholder, position: Int) {
+        holder.text.text=rec.recipes[position].title
+        Picasso.get().load(rec.recipes[position].image).into(holder.image)
     }
 
     override fun getItemCount(): Int {
-        return 7
+        return rec.recipes.size-15
     }
 }
