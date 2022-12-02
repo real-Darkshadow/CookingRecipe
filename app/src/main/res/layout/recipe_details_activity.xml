@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="19dp"
+    android:layout_marginStart="19dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <ImageButton
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rightarrow"
+        android:backgroundTint="@color/white"/>
+
+    <TextView
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:id="@+id/title"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:text="How to make Tasty fish (point kill)"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/tfoodimg"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/searchbackground"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="20sp"
+        android:text="Ingridients"/>
+</LinearLayout>
