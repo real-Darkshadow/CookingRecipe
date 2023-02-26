@@ -30,28 +30,31 @@ class home : Fragment() {
         _binding=FragmentHomeBinding.inflate(inflater,container,false)
 
         viewmodel=ViewModelProvider(this,homefac(constants.repo)).get(homemodel::class.java)
-        if (constants.isNetworkAvailable(requireContext())){
-            viewmodel.data.observe(viewLifecycleOwner,{
+        viewmodel.data.observe(viewLifecycleOwner,{
                 recyclerviews(it)
             })
-        }
+        viewmodel.data2.observe(viewLifecycleOwner,{
+            pop(it)
+
+        })
+
         binding.seeall.setOnClickListener {
             findNavController().navigate(R.id.action_home2_to_seeall2)
         }
 
         return binding.root
     }
-    fun categorybutton(view:View){
 
-
-    }
     fun recyclerviews(reci:recipes){
         binding.popularrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         binding.popularrecycler.adapter= popularAdapter(requireContext(),reci,::onsave)
-        binding.trendingrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.trendingrecycler.adapter= trendingadapter(requireContext(),reci,::onsave)
+
         binding.recentrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         binding.recentrecycler.adapter= recentAdapter(requireContext(),reci,::onsave)
+    }
+    fun pop(reci:recipes){
+        binding.trendingrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        binding.trendingrecycler.adapter= trendingadapter(requireContext(),reci,::onsave)
     }
     override fun onDestroy() {
         super.onDestroy()

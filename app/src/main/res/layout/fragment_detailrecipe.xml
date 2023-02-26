@@ -13,16 +13,20 @@
 
 
     <ImageButton
+        android:layout_gravity="start"
+        android:scaleType="fitStart"
+        android:layout_marginStart="0dp"
+        android:id="@+id/back"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/rightarrow"
+        android:src="@drawable/left"
         android:backgroundTint="@color/white"/>
 
     <TextView
-        android:layout_width="352dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+android:maxLines="2"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_semibold"
         android:id="@+id/title"
@@ -58,10 +62,24 @@
         android:layout_width="match_parent"
         android:id="@+id/ingrec"
         android:layout_height="wrap_content"
-         />
+        />
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:id="@+id/summary"
+            android:layout_marginTop="12dp"
+            android:text="Instruction"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
             android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:fontFamily="@font/poppins" />
 </LinearLayout>
 </androidx.core.widget.NestedScrollView>

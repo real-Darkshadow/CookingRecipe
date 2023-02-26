@@ -2,15 +2,19 @@ package com.example.cookingrecipe.ui.detailui
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookingrecipe.apidata.ExtendedIngredient
 import com.example.cookingrecipe.constants
 import com.example.cookingrecipe.databinding.FragmentDetailrecipeBinding
+import com.example.cookingrecipe.ui.detailui.viewmodel.DetailrecipeViewModel
+import com.example.cookingrecipe.ui.detailui.viewmodel.detailfac
 import com.squareup.picasso.Picasso
 
 class detailrecipe : Fragment() {
@@ -23,17 +27,34 @@ class detailrecipe : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding= FragmentDetailrecipeBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this,detailfac(constants.repo)).get(DetailrecipeViewModel::class.java)
-        val title=args.title
-        binding!!.title.text=title
-        val image=args.image
-        Picasso.get().load(image).into(binding!!.tfoodimg)
+        viewModel = ViewModelProvider(this, detailfac(constants.repo)).get(DetailrecipeViewModel::class.java)
         val position=args.position
+        if(args.adapter=="pop"){
+            viewModel.data2.observe(viewLifecycleOwner,{
+                binding!!.title.text=it.recipes[position].title
+                Picasso.get().load(it.recipes[position].image).into(binding!!.tfoodimg)
+                val senddata=it.recipes[position].extendedIngredients.toList()
+                recycler(senddata)
+                val sum=Html.fromHtml(it.recipes[position].instructions).toString()
+                binding!!.summary.text=sum
 
-        viewModel.data.observe(viewLifecycleOwner,{
-            val senddata=it.recipes[position].extendedIngredients.toList()
-            recycler(senddata)
-        })
+            })
+        }
+        else{
+            viewModel.data.observe(viewLifecycleOwner,{
+                binding!!.title.text=it.recipes[position].title
+                Picasso.get().load(it.recipes[position].image).into(binding!!.tfoodimg)
+                val senddata=it.recipes[position].extendedIngredients.toList()
+                recycler(senddata)
+                val sum=Html.fromHtml(it.recipes[position].instructions).toString()
+                binding!!.summary.text=sum
+
+            })
+        }
+
+        binding!!.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
 
 

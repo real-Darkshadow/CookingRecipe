@@ -4,12 +4,19 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingrecipe.R
 import com.example.cookingrecipe.apidata.recipes
+import com.squareup.picasso.Picasso
 
-class recentAdapter(context: Context, reci: recipes, kFunction0: () -> Unit) : RecyclerView.Adapter<recentAdapter.VH>() {
-    class VH(ciew: View) : RecyclerView.ViewHolder(ciew) {
+class recentAdapter(val context: Context, val rec: recipes, val  kFunction0: () -> Unit) : RecyclerView.Adapter<recentAdapter.VH>() {
+    class VH(view: View) : RecyclerView.ViewHolder(view) {
+        val image=view.findViewById<ImageView>(R.id.image2)
+        val name=view.findViewById<TextView>(R.id.tffodname)
+        val view=view
 
     }
 
@@ -19,10 +26,15 @@ class recentAdapter(context: Context, reci: recipes, kFunction0: () -> Unit) : R
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-
+        Picasso.get().load(rec.recipes[position+10].image).into(holder.image)
+        holder.name.text=rec.recipes[position+10].title
+        holder.image.setOnClickListener{
+            val action=homeDirections.actionHome2ToDetailrecipe2(position,"rec")
+            Navigation.findNavController(holder.view).navigate(action)
+        }
     }
 
     override fun getItemCount(): Int {
-        return 8
+        return rec.recipes.size-15
     }
 }

@@ -1,64 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="125dp"
+            android:layout_height="170dp"
             android:orientation="vertical"
-            android:layout_marginBottom="24dp"
-            android:layout_marginEnd="16dp"
+
             >
 
             <androidx.cardview.widget.CardView
-                android:layout_width="124dp"
-                android:layout_height="124dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:cardCornerRadius="16dp">
+                app:cardCornerRadius="12dp">
 
                 <ImageView
-                    android:layout_width="124dp"
-                    android:layout_height="124dp"
-                    android:scaleType="centerInside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image2"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/image2" />
 
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:lineHeight="19.6dp"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppins_semibold" android:lineSpacingExtra="2dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:id="@+id/tffodname"
+                android:textSize="14dp"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="Veg Paneer Role"
                 android:textColor="@color/black" />
 
-
-            <TextView
-                android:id="@+id/tfoodname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="by hellyeah king"
-                android:textSize="10sp"
-                android:lineHeight="14dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-</LinearLayout>

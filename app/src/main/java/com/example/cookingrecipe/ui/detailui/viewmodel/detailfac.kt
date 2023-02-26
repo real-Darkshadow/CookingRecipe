@@ -1,6 +1,4 @@
-package com.example.cookingrecipe.ui.detailui
-
-import com.example.cookingrecipe.ui.homeui.homemodel
+package com.example.cookingrecipe.ui.detailui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

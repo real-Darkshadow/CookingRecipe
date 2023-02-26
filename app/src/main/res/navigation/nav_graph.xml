@@ -50,13 +50,10 @@
         android:id="@+id/detailrecipe2"
         android:name="com.example.cookingrecipe.ui.detailui.detailrecipe"
         android:label="detailrecipe" >
-        <argument
-            android:name="title"
-            app:argType="string" />
-        <argument
-            android:name="image"
-            app:argType="string" />
         <argument android:name="position"
             app:argType="integer" />
+        <argument
+            android:name="adapter"
+            app:argType="string" />
     </fragment>
 </navigation>

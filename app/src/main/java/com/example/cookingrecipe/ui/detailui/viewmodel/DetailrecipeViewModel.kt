@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.ui.detailui
+package com.example.cookingrecipe.ui.detailui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -9,6 +9,8 @@ class DetailrecipeViewModel(private val repo:repo) : ViewModel() {
 
     val data:LiveData<recipes>
     get() = repo.data
+    val data2:LiveData<recipes>
+        get() = repo.data2
 
 
 
