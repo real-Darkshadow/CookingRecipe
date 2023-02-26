@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -50,14 +50,14 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/seeall"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/seeall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
@@ -74,9 +74,9 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/rightarrow"
-                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintBottom_toBottomOf="@+id/seeall"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView2" />
+                app:layout_constraintTop_toTopOf="@+id/seeall" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -95,93 +95,45 @@
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginTop="20dp"
             android:text="Popular category" />
-
         <HorizontalScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
             android:scrollbars="none"
-            android:layout_weight="1">
+            android:layout_height="wrap_content">
 
-            <TableLayout
-                android:id="@+id/tableLayout1"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="19dp"
-                android:isScrollContainer="true">
-
-                <TableRow
-                    android:id="@+id/tableRow1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:text="Salad"
-                        android:textColor="@color/buttont"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/buttonbg"/>
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="Breakfast"
-                        android:textSize="8dp"
-                        android:textColor="@color/buttont"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/buttonbg"/>
-
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:text="Appetizer"
-                        android:textColor="@color/buttont"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/buttonbg"/>
-
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:text="Noodle"
-                        android:textColor="@color/buttont"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/buttonbg"/>
-
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="Salad"
-                        android:textColor="@color/buttont"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/buttonbg"/>
-
-                    <Button
-                        android:layout_width="83dp"
-                        android:onClick="categorybutton"
-                        android:layout_height="34dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:text="Salad"
-                        android:textColor="@color/buttont"
-                        android:background="@drawable/buttonbg"
-                        android:backgroundTintMode="add"/>
-
-
-
-
-                </TableRow>
-            </TableLayout>
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:text="Salad"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:text="Breakfast"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:text="Appetizer"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:text="Noodle"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:text="Deserts"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popularrecycler"
             android:layout_width="wrap_content"
@@ -242,4 +194,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

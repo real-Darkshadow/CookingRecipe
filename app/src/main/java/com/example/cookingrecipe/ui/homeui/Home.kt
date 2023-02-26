@@ -6,16 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cookingrecipe.RecycleAdapters.popularAdapter
-import com.example.cookingrecipe.RecycleAdapters.recentAdapter
-import com.example.cookingrecipe.RecycleAdapters.trendingadapter
+import com.example.cookingrecipe.R
 import com.example.cookingrecipe.apidata.recipes
 import com.example.cookingrecipe.constants
 import com.example.cookingrecipe.databinding.FragmentHomeBinding
-import com.example.cookingrecipe.network.api
-import com.example.cookingrecipe.network.retrohelper
-import com.example.cookingrecipe.repo.repo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,14 +28,17 @@ class home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding=FragmentHomeBinding.inflate(inflater,container,false)
-        val api=retrohelper.getinstance().create(api::class.java)
-        val repo=repo(api)
-        viewmodel=ViewModelProvider(this,homefac(repo)).get(homemodel::class.java)
+
+        viewmodel=ViewModelProvider(this,homefac(constants.repo)).get(homemodel::class.java)
         if (constants.isNetworkAvailable(requireContext())){
             viewmodel.data.observe(viewLifecycleOwner,{
                 recyclerviews(it)
             })
         }
+        binding.seeall.setOnClickListener {
+            findNavController().navigate(R.id.action_home2_to_seeall2)
+        }
+
         return binding.root
     }
     fun categorybutton(view:View){

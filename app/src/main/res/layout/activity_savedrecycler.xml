@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
-        app:cardCornerRadius="0dp"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:cardCornerRadius="10dp"
+    android:layout_margin="18dp"
         android:layout_marginBottom="24dp"
-        android:layout_height="match_parent">
+        android:layout_height="225dp">
 
         <LinearLayout
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -24,7 +24,7 @@
                 <ImageView
                     android:id="@+id/tfoodimg"
                     android:layout_width="match_parent"
-
+                    android:scaleType="centerCrop"
                     android:layout_height="180dp"
                     android:background="@drawable/searchbackground"
                     android:clipToOutline="true"
@@ -43,6 +43,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="How to sharwama at home"
+                    android:maxLines="2"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -52,6 +53,7 @@
                 <ImageView
                     android:layout_width="31dp"
                     android:layout_height="25dp"
+                    android:id="@+id/save"
                     android:layout_gravity="end"
                     android:src="@drawable/save"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -63,4 +65,3 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-</LinearLayout>

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginEnd="19dp"
-    android:layout_marginStart="19dp"
-    android:orientation="vertical"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
 
     <ImageButton
@@ -45,13 +49,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_semibold"
         android:textSize="20sp"
         android:text="Ingridients"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_height="match_parent"/>
+        android:id="@+id/ingrec"
+        android:layout_height="wrap_content"
+         />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:id="@+id/summary"
+            android:layout_height="wrap_content"/>
 </LinearLayout>
+</androidx.core.widget.NestedScrollView>

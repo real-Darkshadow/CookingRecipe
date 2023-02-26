@@ -1,5 +1,8 @@
 package com.example.cookingrecipe.apidata
 
+
+
+
 data class Recipe(
     val aggregateLikes: Int,
     val analyzedInstructions: List<AnalyzedInstruction>,

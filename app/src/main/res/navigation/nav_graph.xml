@@ -16,15 +16,47 @@
         <action
             android:id="@+id/action_home2_to_notifications"
             app:destination="@id/notifications" />
+        <action
+            android:id="@+id/action_home2_to_seeall2"
+            app:destination="@id/seeall2" />
+        <action
+            android:id="@+id/action_home2_to_detailrecipe2"
+            app:destination="@id/detailrecipe2" />
     </fragment>
     <fragment
         android:id="@+id/saved"
         android:name="com.example.cookingrecipe.ui.savedui.saved"
         android:label="fragment_saved"
-        tools:layout="@layout/fragment_saved" />
+        tools:layout="@layout/fragment_saved" >
+        <action
+            android:id="@+id/action_saved_to_detailrecipe2"
+            app:destination="@id/detailrecipe2" />
+    </fragment>
     <fragment
         android:id="@+id/notifications"
         android:name="com.example.cookingrecipe.fragments.notifications"
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/seeall2"
+        android:name="com.example.cookingrecipe.ui.seeallui.seeall"
+        android:label="fragment_seeall"
+        tools:layout="@layout/fragment_seeall" >
+        <action
+            android:id="@+id/action_seeall2_to_detailrecipe2"
+            app:destination="@id/detailrecipe2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailrecipe2"
+        android:name="com.example.cookingrecipe.ui.detailui.detailrecipe"
+        android:label="detailrecipe" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument android:name="position"
+            app:argType="integer" />
+    </fragment>
 </navigation>

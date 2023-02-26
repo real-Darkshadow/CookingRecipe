@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.RecycleAdapters
+package com.example.cookingrecipe.ui.homeui
 
 import android.annotation.SuppressLint
 import android.content.Context

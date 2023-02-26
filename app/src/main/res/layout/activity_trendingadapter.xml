@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="250dp"
-        app:cardCornerRadius="0dp"
-        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp"
+        android:layout_height="215dp"
         android:layout_marginEnd="16dp">
 
         <LinearLayout
@@ -43,6 +41,7 @@
                     android:text="How to sharwamdfdsdsfsdfa at home"
                     android:textColor="@color/black"
                     android:textSize="16sp"
+                    android:maxLines="2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -61,4 +60,3 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-</LinearLayout>

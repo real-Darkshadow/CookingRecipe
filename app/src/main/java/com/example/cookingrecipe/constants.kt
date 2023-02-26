@@ -4,13 +4,18 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import com.example.cookingrecipe.apidata.recipes
+import com.example.cookingrecipe.network.api
+import com.example.cookingrecipe.network.retrohelper
+import com.example.cookingrecipe.repo.repo
 
 object constants {
 
 
     const val APP_ID: String = "0971290cafd74fdbb93f8ad10656d504"
     const val BASE_URL: String = "https://api.spoonacular.com"
+
+    val api= retrohelper.getinstance().create(api::class.java)
+    val repo=repo(api)
 
 
     fun isNetworkAvailable(context: Context): Boolean {
