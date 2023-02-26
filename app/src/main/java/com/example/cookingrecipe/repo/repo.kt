@@ -21,4 +21,8 @@ class repo(private val apiservice:api){
             Log .e("error","error")
         }
     }
+
+    suspend fun save() {
+
+    }
 }

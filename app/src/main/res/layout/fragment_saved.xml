@@ -5,7 +5,7 @@
     android:layout_marginTop="19dp"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".fragments.saved">
+    tools:context=".ui.savedui.saved">
 
     <TextView
         android:layout_marginStart="19dp"

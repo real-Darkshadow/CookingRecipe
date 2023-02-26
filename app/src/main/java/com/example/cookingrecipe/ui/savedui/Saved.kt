@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.fragments
+package com.example.cookingrecipe.ui.savedui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

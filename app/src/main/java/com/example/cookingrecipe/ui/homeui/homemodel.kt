@@ -9,6 +9,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class homemodel(private val repo:repo):ViewModel() {
+    suspend fun save() {
+        repo.save()
+    }
 
     init {
         viewModelScope.launch(Dispatchers.IO){

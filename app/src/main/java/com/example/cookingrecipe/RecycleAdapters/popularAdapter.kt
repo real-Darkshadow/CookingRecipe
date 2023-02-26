@@ -12,7 +12,7 @@ import com.example.cookingrecipe.R
 import com.example.cookingrecipe.apidata.recipes
 import com.squareup.picasso.Picasso
 
-class popularAdapter(context: Context,val rec:recipes): RecyclerView.Adapter<popularAdapter.Viewholder>() {
+class popularAdapter(context: Context, val rec: recipes,val onsave: () -> Unit): RecyclerView.Adapter<popularAdapter.Viewholder>() {
     class Viewholder(view: View):RecyclerView.ViewHolder(view){
         val text=view.findViewById<TextView>(R.id.ptext)
         val image=view.findViewById<ImageView>(R.id.pimage)

@@ -1,12 +1,10 @@
-package com.example.cookingrecipe.ui
+package com.example.cookingrecipe.ui.homeui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookingrecipe.RecycleAdapters.popularAdapter
@@ -18,16 +16,15 @@ import com.example.cookingrecipe.databinding.FragmentHomeBinding
 import com.example.cookingrecipe.network.api
 import com.example.cookingrecipe.network.retrohelper
 import com.example.cookingrecipe.repo.repo
-import com.example.cookingrecipe.ui.homeui.homefac
-import com.example.cookingrecipe.ui.homeui.homemodel
-import retrofit2.*
-import retrofit2.converter.gson.GsonConverterFactory
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class home : Fragment() {
 
     private var _binding:FragmentHomeBinding?=null
-    val binding get()=_binding!!
+    private val binding get()=_binding!!
     private lateinit var viewmodel:homemodel
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,14 +48,19 @@ class home : Fragment() {
     }
     fun recyclerviews(reci:recipes){
         binding.popularrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.popularrecycler.adapter= popularAdapter(requireContext(),reci)
+        binding.popularrecycler.adapter= popularAdapter(requireContext(),reci,::onsave)
         binding.trendingrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.trendingrecycler.adapter= trendingadapter(requireContext(),reci)
+        binding.trendingrecycler.adapter= trendingadapter(requireContext(),reci,::onsave)
         binding.recentrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        binding.recentrecycler.adapter= recentAdapter(requireContext(),reci)
+        binding.recentrecycler.adapter= recentAdapter(requireContext(),reci,::onsave)
     }
     override fun onDestroy() {
         super.onDestroy()
         _binding=null
+    }
+    fun onsave(){
+        CoroutineScope(Dispatchers.IO).launch {
+            viewmodel.save()
+        }
     }
 }
