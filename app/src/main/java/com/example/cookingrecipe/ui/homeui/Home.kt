@@ -34,7 +34,7 @@ class home : Fragment() {
                 recyclerviews(it)
             })
         viewmodel.data2.observe(viewLifecycleOwner,{
-            pop(it)
+            trending(it)
 
         })
 
@@ -52,7 +52,7 @@ class home : Fragment() {
         binding.recentrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         binding.recentrecycler.adapter= recentAdapter(requireContext(),reci,::onsave)
     }
-    fun pop(reci:recipes){
+    fun trending(reci:recipes){
         binding.trendingrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         binding.trendingrecycler.adapter= trendingadapter(requireContext(),reci,::onsave)
     }

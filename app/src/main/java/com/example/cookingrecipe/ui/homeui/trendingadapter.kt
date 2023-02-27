@@ -28,7 +28,7 @@ class trendingadapter(val context: Context, val rec: recipes, kFunction0: () -> 
         holder.text.text=rec.recipes[position].title
         Picasso.get().load(rec.recipes[position].image).noFade().into(holder.image)
         holder.image.setOnClickListener{
-            val action=homeDirections.actionHome2ToDetailrecipe2(position,"pop")
+            val action=homeDirections.actionHome2ToDetailrecipe2(position,"trending")
             Navigation.findNavController(holder.view).navigate(action)
         }
     }

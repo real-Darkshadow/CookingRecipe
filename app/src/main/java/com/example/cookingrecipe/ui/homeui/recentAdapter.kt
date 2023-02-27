@@ -29,7 +29,7 @@ class recentAdapter(val context: Context, val rec: recipes, val  kFunction0: () 
         Picasso.get().load(rec.recipes[position+10].image).into(holder.image)
         holder.name.text=rec.recipes[position+10].title
         holder.image.setOnClickListener{
-            val action=homeDirections.actionHome2ToDetailrecipe2(position,"rec")
+            val action=homeDirections.actionHome2ToDetailrecipe2(position+10,"rec")
             Navigation.findNavController(holder.view).navigate(action)
         }
     }

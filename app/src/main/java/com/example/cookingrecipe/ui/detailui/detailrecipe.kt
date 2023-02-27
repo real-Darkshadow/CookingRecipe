@@ -29,7 +29,7 @@ class detailrecipe : Fragment() {
         binding= FragmentDetailrecipeBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this, detailfac(constants.repo)).get(DetailrecipeViewModel::class.java)
         val position=args.position
-        if(args.adapter=="pop"){
+        if(args.adapter=="trending"){
             viewModel.data2.observe(viewLifecycleOwner,{
                 binding!!.title.text=it.recipes[position].title
                 Picasso.get().load(it.recipes[position].image).into(binding!!.tfoodimg)
