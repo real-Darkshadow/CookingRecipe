@@ -69,7 +69,7 @@ class home : Fragment() {
         super.onDestroy()
         _binding=null
     }
-    fun onsave(name: String,image: String,des:String){
+    fun onsave(name: String, image: String ,des:String){
         CoroutineScope(Dispatchers.IO).launch {
             viewmodel.save(name, image, des)
         }

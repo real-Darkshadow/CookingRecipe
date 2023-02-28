@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.TypeConverter
 import com.example.cookingrecipe.Room.database
 import com.example.cookingrecipe.apidata.ExtendedIngredient
 import com.example.cookingrecipe.constants
@@ -57,22 +59,26 @@ class detailrecipe : Fragment() {
                 binding!!.summary.text=sum
 
             }))
+            "rec"->(
+                    viewModel.data.observe(viewLifecycleOwner,{
+                        binding!!.title.text=it.recipes[position].title
+                        Picasso.get().load(it.recipes[position].image).into(binding!!.tfoodimg)
+                        val senddata=it.recipes[position].extendedIngredients.toList()
+                        recycler(senddata)
+                        val sum=Html.fromHtml(it.recipes[position].instructions).toString()
+                        binding!!.summary.text=sum
+
+                    }))
+            else->(viewModel.roomdata.observe(viewLifecycleOwner,{
+                    binding!!.title.text=it[position].name
+                    Picasso.get().load(it[position].image).into(binding!!.tfoodimg)
+                    val sum=Html.fromHtml(it[position].summary).toString()
+                    binding!!.summary.text=sum
+
+                }))
+            }
 
 
-
-
-        }
-        else{
-            viewModel.data.observe(viewLifecycleOwner,{
-                binding!!.title.text=it.recipes[position].title
-                Picasso.get().load(it.recipes[position].image).into(binding!!.tfoodimg)
-                val senddata=it.recipes[position].extendedIngredients.toList()
-                recycler(senddata)
-                val sum=Html.fromHtml(it.recipes[position].instructions).toString()
-                binding!!.summary.text=sum
-
-            })
-        }
 
         binding!!.back.setOnClickListener {
             findNavController().popBackStack()

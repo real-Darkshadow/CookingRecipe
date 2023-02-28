@@ -35,6 +35,7 @@ class trendingadapter(val context: Context, val rec: recipes, val onsave: KFunct
         val image=rec.recipes[position].image
         Picasso.get().load(image).noFade().into(holder.image)
         val des=Html.fromHtml(rec.recipes[position].instructions).toString()
+        val exing=rec.recipes[position].extendedIngredients
         holder.card.setOnClickListener{
             val action=homeDirections.actionHome2ToDetailrecipe2(position,"trending")
             Navigation.findNavController(holder.view).navigate(action)
