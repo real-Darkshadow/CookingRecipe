@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.ui.savedui
+package com.example.cookingrecipe.ui.savedui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

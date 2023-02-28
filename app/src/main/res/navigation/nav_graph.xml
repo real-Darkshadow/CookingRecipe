@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_seeall2_to_detailrecipe2"
             app:destination="@id/detailrecipe2" />
+        <argument
+            android:name="seeall"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/detailrecipe2"

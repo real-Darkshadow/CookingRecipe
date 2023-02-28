@@ -39,14 +39,6 @@ class detailrecipe : Fragment() {
         val repo= (application as constants).repo
 
 
-
-
-
-
-
-
-
-
         viewModel = ViewModelProvider(this, detailfac(repo)).get(DetailrecipeViewModel::class.java)
         val position=args.position
         when(args.adapter){

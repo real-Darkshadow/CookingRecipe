@@ -11,6 +11,8 @@ class SeeallViewModel(private val repo: repo): ViewModel() {
     suspend fun save(name: String,image: String,des:String) {
         repo.save(name, image, des)
     }
+    val data2:LiveData<recipes>
+        get() = repo.data2
 
     val data:LiveData<recipes>
     get() = repo.data

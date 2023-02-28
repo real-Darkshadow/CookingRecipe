@@ -12,6 +12,8 @@ import com.example.cookingrecipe.R
 import com.example.cookingrecipe.apidata.recipes
 import com.example.cookingrecipe.constants
 import com.example.cookingrecipe.databinding.FragmentHomeBinding
+import com.example.cookingrecipe.ui.seeallui.seeall
+import com.example.cookingrecipe.ui.seeallui.seeallDirections
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -48,8 +50,14 @@ class home : Fragment() {
         })
 
         binding.seeall.setOnClickListener {
-            findNavController().navigate(R.id.action_home2_to_seeall2)
+            val action=homeDirections.actionHome2ToSeeall2("trending")
+            findNavController().navigate(action)
         }
+        binding.recentseeall.setOnClickListener {
+            val action=homeDirections.actionHome2ToSeeall2("recent")
+            findNavController().navigate(action)
+        }
+
 
         return binding.root
     }

@@ -11,11 +11,13 @@ import com.example.cookingrecipe.ui.savedui.Recadapter.savedAdapter
 import com.example.cookingrecipe.Room.entity
 import com.example.cookingrecipe.constants
 import com.example.cookingrecipe.databinding.FragmentSavedBinding
+import com.example.cookingrecipe.ui.savedui.viewmodel.savedfac
+import com.example.cookingrecipe.ui.savedui.viewmodel.savedmodel
 
 class saved : Fragment() {
     private var _binding:FragmentSavedBinding?=null
     private val binding get() = _binding!!
-  private lateinit var viewmodel:savedmodel
+  private lateinit var viewmodel: savedmodel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,7 +27,7 @@ class saved : Fragment() {
         _binding=FragmentSavedBinding.inflate(inflater, container, false)
         val application=requireActivity().application
         val repo=(application as constants).repo
-        viewmodel=ViewModelProvider(this,savedfac(repo)).get(savedmodel::class.java)
+        viewmodel=ViewModelProvider(this, savedfac(repo)).get(savedmodel::class.java)
 
         viewmodel.roomdata.observe(viewLifecycleOwner,{
             recycler(it)
@@ -42,7 +44,11 @@ class saved : Fragment() {
     }
     fun recycler(data: List<entity>){
         binding.savedrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        binding.savedrecycler.adapter= savedAdapter(requireContext(),data)
+        binding.savedrecycler.adapter= savedAdapter(requireContext(),data,::unsave)
+    }
+
+    fun unsave(name: String,image: String,des:String){
+        viewmodel.unsave(name, image, des)
     }
 
 

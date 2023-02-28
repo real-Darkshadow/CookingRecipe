@@ -12,10 +12,10 @@
     <item
         android:id="@+id/notifications"
         android:enabled="true"
-        android:icon="@drawable/icon2"
+        android:icon="@drawable/notification"
         android:title="notifications" />
     <item
-        android:id="@+id/page_4"
+        android:id="@+id/profile"
         android:enabled="true"
         android:icon="@drawable/pro"
         android:title="profile" />

@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     app:cardCornerRadius="10dp"
+    android:id="@+id/card"
     android:layout_height="225dp"
     android:layout_margin="16dp">
 
@@ -49,10 +50,9 @@
             <ImageView
                 android:layout_width="31dp"
                 android:layout_height="25dp"
-                android:id="@+id/save"
-
+                android:id="@+id/saved"
                 android:layout_gravity="end"
-                android:src="@drawable/save"
+                android:src="@drawable/saved"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

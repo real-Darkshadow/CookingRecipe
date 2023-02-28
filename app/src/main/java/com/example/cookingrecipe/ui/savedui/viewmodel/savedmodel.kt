@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.ui.savedui
+package com.example.cookingrecipe.ui.savedui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,6 +21,12 @@ class savedmodel(private val repo:repo):ViewModel() {
 
     val roomdata: LiveData<List<entity>>
     get() = repo.roomdata
+
+    fun unsave(name: String,image: String,des:String){
+        viewModelScope.launch(Dispatchers.IO){
+            repo.unsave(name, image, des)
+        }
+    }
 
 
 }

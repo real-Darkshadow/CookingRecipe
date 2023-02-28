@@ -24,7 +24,7 @@ class notificationAdapter(context: Context): RecyclerView.Adapter<notificationAd
     }
 
     override fun getItemCount(): Int {
-        return 15
+        return 1
     }
 
 }
