@@ -47,8 +47,8 @@ class detailrecipe : Fragment() {
 
         viewModel = ViewModelProvider(this, detailfac(repo)).get(DetailrecipeViewModel::class.java)
         val position=args.position
-        if(args.adapter=="trending"){
-            viewModel.data2.observe(viewLifecycleOwner,{
+        when(args.adapter){
+            "trending"->(viewModel.data2.observe(viewLifecycleOwner,{
                 binding!!.title.text=it.recipes[position].title
                 Picasso.get().load(it.recipes[position].image).into(binding!!.tfoodimg)
                 val senddata=it.recipes[position].extendedIngredients.toList()
@@ -56,7 +56,11 @@ class detailrecipe : Fragment() {
                 val sum=Html.fromHtml(it.recipes[position].instructions).toString()
                 binding!!.summary.text=sum
 
-            })
+            }))
+
+
+
+
         }
         else{
             viewModel.data.observe(viewLifecycleOwner,{

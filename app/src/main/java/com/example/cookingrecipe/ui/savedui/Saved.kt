@@ -27,8 +27,11 @@ class saved : Fragment() {
         val repo=(application as constants).repo
         viewmodel=ViewModelProvider(this,savedfac(repo)).get(savedmodel::class.java)
 
-        val roomdata=viewmodel.roomdata
-        recycler(roomdata)
+        viewmodel.roomdata.observe(viewLifecycleOwner,{
+            recycler(it)
+        }
+        )
+
 
         return binding.root
     }
@@ -37,7 +40,7 @@ class saved : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
-    fun recycler(data:List<entity>){
+    fun recycler(data: List<entity>){
         binding.savedrecycler.layoutManager=LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         binding.savedrecycler.adapter= savedAdapter(requireContext(),data)
     }

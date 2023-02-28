@@ -20,7 +20,12 @@ class repo(private val apiservice: api, val roomservice: roomservice){
     val data2:LiveData<recipes>
         get() = mdata2
 
-    lateinit var roomdata:List<entity>
+
+    var rd=MutableLiveData<List<entity>>()
+    val roomdata:LiveData<List<entity>>
+        get() = rd
+
+//    lateinit var roomdata=LiveData<List<entity>>
     suspend fun getrecipes(){
         val result=apiservice.getdata("40",constants().APP_ID)
         if (result?.body()!=null){
@@ -47,5 +52,5 @@ class repo(private val apiservice: api, val roomservice: roomservice){
         roomservice.deleteall(entity( 0,name,image,des))
     }
      suspend fun getall(){
-       roomdata=roomservice.getall() }
+       rd.postValue(roomservice.getall()) }
 }

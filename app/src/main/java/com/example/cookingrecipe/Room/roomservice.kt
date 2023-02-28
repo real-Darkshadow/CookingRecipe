@@ -13,5 +13,5 @@ interface roomservice {
     @Delete
     suspend fun deleteall(entity: entity)
     @Query("SELECT * FROM entity")
-    suspend fun getall():List<entity>
+    fun getall():List<entity>
 }

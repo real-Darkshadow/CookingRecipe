@@ -1,68 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <com.google.android.material.card.MaterialCardView
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    android:layout_height="225dp"
+    android:layout_margin="16dp">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        app:cardCornerRadius="10dp"
-    android:id="@+id/card"
-    android:layout_margin="18dp"
-        android:layout_marginBottom="24dp"
-        android:layout_height="225dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:cardCornerRadius="10dp">
 
-            <androidx.cardview.widget.CardView
+            <ImageView
+                android:id="@+id/tfoodimg"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="10dp">
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/searchbackground"/>
+        </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:id="@+id/tfoodimg"
-                    android:layout_width="match_parent"
-                    android:scaleType="centerCrop"
-                    android:layout_height="180dp"
-                    android:background="@drawable/searchbackground"
-                    android:clipToOutline="true"
-                    android:src="@drawable/savedimage" />
-            </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tfoodname"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="How to sharwamdfdsdsfsdfa at home"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:maxLines="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tfoodname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="How to sharwama at home"
-                    android:maxLines="2"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:layout_width="31dp"
+                android:layout_height="25dp"
+                android:id="@+id/save"
 
-                <ImageView
-                    android:layout_width="31dp"
-                    android:layout_height="25dp"
-                    android:id="@+id/save"
-                    android:layout_gravity="end"
-                    android:src="@drawable/save"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                android:layout_gravity="end"
+                android:src="@drawable/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
+    </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+</com.google.android.material.card.MaterialCardView>

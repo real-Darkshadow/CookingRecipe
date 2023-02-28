@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingrecipe.R
 import com.example.cookingrecipe.Room.entity
 import com.example.cookingrecipe.ui.savedui.savedDirections
-import com.example.cookingrecipe.ui.seeallui.seeallDirections
 import com.squareup.picasso.Picasso
 
 class savedAdapter(context: Context, val data: List<entity>): RecyclerView.Adapter<savedAdapter.viewholder>() {
@@ -32,7 +31,7 @@ class savedAdapter(context: Context, val data: List<entity>): RecyclerView.Adapt
         holder.title.text=data[position].name
         Picasso.get().load(data[position].image).into(holder.image)
         holder.image.setOnClickListener{
-            val action= savedDirections.actionSavedToDetailrecipe2(position,"rec")
+            val action= savedDirections.actionSavedToDetailrecipe2(position,"saved")
             Navigation.findNavController(holder.view).navigate(action)
         }
     }

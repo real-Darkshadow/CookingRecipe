@@ -19,7 +19,7 @@ class savedmodel(private val repo:repo):ViewModel() {
         }
     }
 
-    val roomdata: List<entity>
+    val roomdata: LiveData<List<entity>>
     get() = repo.roomdata
 
 
