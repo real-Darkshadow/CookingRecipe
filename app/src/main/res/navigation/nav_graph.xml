@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/notifications"
-        android:name="com.example.cookingrecipe.fragments.notifications"
+        android:name="com.example.cookingrecipe.ui.notificationui.notifications"
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
@@ -56,4 +56,9 @@
             android:name="adapter"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.cookingrecipe.ui.Profileui.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.fragments
+package com.example.cookingrecipe.ui
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity

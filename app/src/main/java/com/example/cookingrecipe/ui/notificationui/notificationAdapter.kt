@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.RecycleAdapters
+package com.example.cookingrecipe.ui.notificationui
 
 import android.content.Context
 import android.view.LayoutInflater
