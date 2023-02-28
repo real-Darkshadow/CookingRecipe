@@ -11,8 +11,8 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class homemodel(private val repo:repo):ViewModel() {
-    suspend fun save() {
-        repo.save()
+    suspend fun save(name: String,image: String,des:String) {
+        repo.save(name,image,des)
     }
 
     init {

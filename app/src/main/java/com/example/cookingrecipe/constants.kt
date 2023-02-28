@@ -1,23 +1,36 @@
 package com.example.cookingrecipe
 
+import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import com.example.cookingrecipe.Room.database
+import com.example.cookingrecipe.Room.roomservice
 import com.example.cookingrecipe.network.api
 import com.example.cookingrecipe.network.retrohelper
 import com.example.cookingrecipe.repo.repo
 
-object constants {
+class constants:Application() {
 
 
-    const val APP_ID: String = "0971290cafd74fdbb93f8ad10656d504"
-    const val BASE_URL: String = "https://api.spoonacular.com"
+     val APP_ID: String = "0971290cafd74fdbb93f8ad10656d504"
+     val BASE_URL: String = "https://api.spoonacular.com"
 
-    val api= retrohelper.getinstance().create(api::class.java)
-    val repo=repo(api)
+    lateinit var repo: repo
+
+    override fun onCreate() {
+        super.onCreate()
+        init()
+    }
+
+    fun init(){
+         val roomservice =database.getDatabase(applicationContext).dao()
+         val api= retrohelper.getinstance().create(api::class.java)
+         repo=repo(api, roomservice)
 
 
+    }
     fun isNetworkAvailable(context: Context): Boolean {
         // It answers the queries about the state of network connectivity.
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

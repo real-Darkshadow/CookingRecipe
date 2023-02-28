@@ -1,7 +1,6 @@
 package com.example.cookingrecipe.ui.seeallui.recycler
 
 import android.content.Context
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +10,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingrecipe.R
 import com.example.cookingrecipe.apidata.recipes
-import com.example.cookingrecipe.ui.homeui.homeDirections
 import com.example.cookingrecipe.ui.seeallui.seeallDirections
 import com.squareup.picasso.Picasso
+import kotlin.reflect.KFunction3
 
-class seealladapter(val context: Context, val data: recipes, val onsave: () -> Unit): RecyclerView.Adapter<seealladapter.viewhh>(){
+class seealladapter(val context: Context, val data: recipes, val onsave: KFunction3<String, String, String, Unit>): RecyclerView.Adapter<seealladapter.viewhh>(){
     inner class viewhh(View:View): RecyclerView.ViewHolder(View){
         val image=View.findViewById<ImageView>(R.id.tfoodimg)
         val title=View.findViewById<TextView>(R.id.tfoodname)

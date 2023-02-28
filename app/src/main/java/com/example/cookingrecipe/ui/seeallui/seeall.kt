@@ -24,7 +24,16 @@ class seeall : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=FragmentSeeallBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this,seeallfac(constants.repo)).get(SeeallViewModel::class.java)
+
+
+
+
+        val application=requireActivity().application
+        val repo= (application as constants).repo
+
+
+
+        viewModel = ViewModelProvider(this,seeallfac(repo)).get(SeeallViewModel::class.java)
         viewModel.data.observe(viewLifecycleOwner,{
             recycler(it)
         })
@@ -34,10 +43,15 @@ class seeall : Fragment() {
         binding!!.seerecycler.adapter=seealladapter(requireContext(),data,::save)
         binding!!.seerecycler.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
     }
-    fun save(){
+    fun save(name: String,image: String,des:String){
         CoroutineScope(Dispatchers.IO).launch {
-            viewModel.save()
+            viewModel.save(name, image, des)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding=null
     }
 
 

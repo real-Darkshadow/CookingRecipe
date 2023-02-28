@@ -11,8 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingrecipe.R
 import com.example.cookingrecipe.apidata.recipes
 import com.squareup.picasso.Picasso
+import kotlin.reflect.KFunction3
 
-class recentAdapter(val context: Context, val rec: recipes, val  kFunction0: () -> Unit) : RecyclerView.Adapter<recentAdapter.VH>() {
+class recentAdapter(val context: Context, val rec: recipes, val kFunction0: KFunction3<String, String, String, Unit>) : RecyclerView.Adapter<recentAdapter.VH>() {
     class VH(view: View) : RecyclerView.ViewHolder(view) {
         val image=view.findViewById<ImageView>(R.id.image2)
         val name=view.findViewById<TextView>(R.id.tffodname)

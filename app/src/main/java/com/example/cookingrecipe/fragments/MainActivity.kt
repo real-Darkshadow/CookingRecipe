@@ -1,11 +1,13 @@
 package com.example.cookingrecipe.fragments
 
+import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.cookingrecipe.R
+import com.example.cookingrecipe.constants
 import com.example.cookingrecipe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         binding.navigation.setupWithNavController(navController)
+
 
     }
 }

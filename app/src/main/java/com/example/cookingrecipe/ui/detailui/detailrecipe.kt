@@ -10,9 +10,13 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cookingrecipe.Room.database
 import com.example.cookingrecipe.apidata.ExtendedIngredient
 import com.example.cookingrecipe.constants
 import com.example.cookingrecipe.databinding.FragmentDetailrecipeBinding
+import com.example.cookingrecipe.network.api
+import com.example.cookingrecipe.network.retrohelper
+import com.example.cookingrecipe.repo.repo
 import com.example.cookingrecipe.ui.detailui.viewmodel.DetailrecipeViewModel
 import com.example.cookingrecipe.ui.detailui.viewmodel.detailfac
 import com.squareup.picasso.Picasso
@@ -27,7 +31,21 @@ class detailrecipe : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding= FragmentDetailrecipeBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this, detailfac(constants.repo)).get(DetailrecipeViewModel::class.java)
+
+
+        val application=requireActivity().application
+        val repo= (application as constants).repo
+
+
+
+
+
+
+
+
+
+
+        viewModel = ViewModelProvider(this, detailfac(repo)).get(DetailrecipeViewModel::class.java)
         val position=args.position
         if(args.adapter=="trending"){
             viewModel.data2.observe(viewLifecycleOwner,{
@@ -63,6 +81,11 @@ class detailrecipe : Fragment() {
     private fun recycler(data: List<ExtendedIngredient>){
         binding!!.ingrec.adapter=detailAdapter(requireContext(),data)
         binding!!.ingrec.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding=null
     }
 
 

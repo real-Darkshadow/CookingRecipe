@@ -29,7 +29,16 @@ class home : Fragment() {
     ): View? {
         _binding=FragmentHomeBinding.inflate(inflater,container,false)
 
-        viewmodel=ViewModelProvider(this,homefac(constants.repo)).get(homemodel::class.java)
+
+        val application=requireActivity().application
+        val repo= (application as constants).repo
+
+
+
+
+
+
+        viewmodel=ViewModelProvider(this,homefac(repo)).get(homemodel::class.java)
         viewmodel.data.observe(viewLifecycleOwner,{
                 recyclerviews(it)
             })
@@ -60,9 +69,9 @@ class home : Fragment() {
         super.onDestroy()
         _binding=null
     }
-    fun onsave(){
+    fun onsave(name: String,image: String,des:String){
         CoroutineScope(Dispatchers.IO).launch {
-            viewmodel.save()
+            viewmodel.save(name, image, des)
         }
     }
 }

@@ -6,8 +6,10 @@ import com.example.cookingrecipe.apidata.recipes
 import com.example.cookingrecipe.repo.repo
 
 class SeeallViewModel(private val repo: repo): ViewModel() {
-    suspend fun save() {
-        repo.save()
+
+
+    suspend fun save(name: String,image: String,des:String) {
+        repo.save(name, image, des)
     }
 
     val data:LiveData<recipes>

@@ -7,6 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 object retrohelper {
 
     fun getinstance():Retrofit{
-        return Retrofit.Builder().baseUrl(constants.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
+        return Retrofit.Builder().baseUrl(constants().BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
     }
 }

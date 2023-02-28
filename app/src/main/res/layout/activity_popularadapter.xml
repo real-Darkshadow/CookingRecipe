@@ -7,6 +7,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
+        android:id="@+id/card"
+
         android:layout_height="wrap_content"
         app:cardCornerRadius="12dp"
         android:backgroundTint="#F1F1F1"
@@ -77,6 +79,7 @@
 
                 <ImageView
                     android:layout_width="31dp"
+                    android:id="@+id/save"
                     android:layout_height="25dp"
                     android:layout_gravity="end"
                     android:src="@drawable/save"
