@@ -18,6 +18,14 @@ View: This layer is responsible for displaying the UI to the user. In this app, 
 ViewModel: This layer is responsible for handling the communication between the view and the model. In this app, the RecipeViewModel class represents the view model.
 The MVVM pattern allows for a clean separation of concerns and makes it easy to test each layer of the app independently.
 
+![App Screenshot](https://res.cloudinary.com/djejz6zgw/image/upload/v1677763405/1677763042164_100_ysokvz.png)
+![App Screenshot](https://res.cloudinary.com/djejz6zgw/image/upload/v1677763404/1677763022693_100_pokp3o.png)
+![App Screenshot](https://res.cloudinary.com/djejz6zgw/image/upload/v1677763403/1677763017060_100_wmfrrt.png)
+![App Screenshot](https://res.cloudinary.com/djejz6zgw/image/upload/v1677763404/1677763011661_100_b7zcyh.png)
+![App Screenshot](https://res.cloudinary.com/djejz6zgw/image/upload/v1677763405/1677763032421_100_wvppof.png)
+![App Screenshot](https://res.cloudinary.com/djejz6zgw/image/upload/v1677763403/1677763029395_100_emcxu9.png)
+
+
 # Libraries Used
 
 This app uses the following libraries:
