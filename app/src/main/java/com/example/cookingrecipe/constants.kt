@@ -14,7 +14,7 @@ import com.example.cookingrecipe.repo.repo
 class constants:Application() {
 
 
-     val APP_ID: String = "0971290cafd74fdbb93f8ad10656d504"
+     val APP_ID: String = "0971290cafd74fd10656d504"
      val BASE_URL: String = "https://api.spoonacular.com"
 
     lateinit var repo: repo
